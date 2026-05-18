@@ -11,6 +11,7 @@ import { aj } from "./lib/arcjet.js"
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const ORIGIN_URL = process.env.ORIGIN_URL;
+const REDIS_URL = process.env.REDIS_REST_URL;
 
 const app = express();
 app.use(express.json());
@@ -24,8 +25,8 @@ const allowedOrigin = ORIGIN_URL;
 
 // Configure CORS options
 const corsOptions = {
-  origin: allowedOrigin,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'] // Specify allowed HTTP methods
+  origin: allowedOrigin, REDIS_URL,
+  methods: ['GET'] // Specify allowed HTTP methods
 };
 
 app.use(cors(corsOptions));
