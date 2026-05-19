@@ -25,7 +25,7 @@ const allowedOrigin = ORIGIN_URL;
 
 // Configure CORS options
 const corsOptions = {
-  origin: allowedOrigin, REDIS_URL,
+  origin: [allowedOrigin, REDIS_URL],
   methods: ['GET'] // Specify allowed HTTP methods
 };
 
