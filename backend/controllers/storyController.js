@@ -108,6 +108,30 @@ export const getAllCategories = async (req, res) => {
     }    
 };
 
+// Serving miscellaneous portfolio data
+export const getPortfolio = async (req, res) => {
+
+    try{
+        const redis = redisConnect();
+        const portfolioCachedData = await redis.get(portfolio);
+        
+        if(portfolioCachedData){
+            console.log("Cache Hit for ID: ", portfolio);
+            //console.log("cachedData: ", cachedData[0].caption_strings);
+            res.status(200).json({ status: "success", data: portfolioCachedData});
+            return;
+        }
+        else{
+            console.log("Cache Miss for ID: ", portfolio);
+            console.log("No SQL Fallback for portfolio.");
+        }
+    }
+    catch(error){
+        console.log(error);
+        res.status(500).json({ status: "Failure", data: "None" });
+    }    
+};
+
 // // Full CRUD functionality possible, but for security only READ allowed by default.
 
 // // UPDATE
