@@ -118,6 +118,8 @@ export const getPortfolio = async (req, res) => {
         if(portfolioCachedData){
             console.log("Cache Hit for ID: ", portfolio);
             //console.log("cachedData: ", cachedData[0].caption_strings);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.status(200).json({ status: "success", data: portfolioCachedData});
             return;
         }
