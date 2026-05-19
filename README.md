@@ -6,7 +6,7 @@ ptch-blog is a modular blog that serves as a passion project. The project is dep
 
 This project utilizes the following:
 
-* <u>Backend</u>: PostgreSQL, NodeJS/ExpressJS
+* <u>Backend</u>: NodeJS/ExpressJS, Upstash Redis, PostgreSQL
 * <u>Frontend</u>: React, Typescript, TailwindCSS
 * <u>Bundler</u>: Vite
 
@@ -31,8 +31,6 @@ Two .env files are needed for the project to work - one for the frontend and one
     * <i><b>ORIGIN_URL</b></i>: URL of the frontend. CORS policy will block requests from any other origin.
     * <i><b>REDIS_REST_URL</b></i>: First half of Redis Key: <b>URL</b> + Token.
     * <i><b>REDIS_REST_TOKEN</b></i>: Second half of Redis Key: URL + <b>Token</b>.
-     
-    REDIS_REST_TOKEN 
     
 * '/frontend/':
     * <i><b>VITE_API_URL</b></i>: URL of the Node backend in this project.

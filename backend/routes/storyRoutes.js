@@ -3,11 +3,13 @@ import {getStoryAll, getStorySingle, getAllCategories} from "../controllers/stor
 
 const router = express.Router();
 
-// router.post("/", createStory);
 router.get("/", getStoryAll);
 router.get("/categories", getAllCategories);
 router.get("/:id", getStorySingle);
-//router.put("/:id", updateStory);
+
+// Only READ operation allowed, for security reasons.
+// router.post("/", createStory);
+// router.put("/:id", updateStory);
 // router.delete("/:id", deleteStory);
 
 export default router;

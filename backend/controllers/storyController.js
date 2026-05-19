@@ -108,6 +108,8 @@ export const getAllCategories = async (req, res) => {
     }    
 };
 
+// // Full CRUD functionality possible, but for security only READ allowed by default.
+
 // // UPDATE
 // export const updateStory = async (req, res) => {
 //     try{
