@@ -31,6 +31,7 @@ Two .env files are needed for the project to work - one for the frontend and one
     * <i><b>ORIGIN_URL</b></i>: URL of the frontend. CORS policy will block requests from any other origin.
     * <i><b>REDIS_REST_URL</b></i>: First half of Redis Key: <b>URL</b> + Token.
     * <i><b>REDIS_REST_TOKEN</b></i>: Second half of Redis Key: URL + <b>Token</b>.
+    * <i><b>PORTFOLIO_ORIGIN</b></i>: Origin server for portfolio API route. Optional, used for serving content to a site other than the frontend.
     
 * '/frontend/':
     * <i><b>VITE_API_URL</b></i>: URL of the Node backend in this project.

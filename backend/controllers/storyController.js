@@ -116,15 +116,13 @@ export const getPortfolio = async (req, res) => {
         const portfolioCachedData = await redis.get(portfolio);
         
         if(portfolioCachedData){
-            console.log("Cache Hit for ID: ", portfolio);
-            //console.log("cachedData: ", cachedData[0].caption_strings);
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            res.status(200).json({ status: "success", data: portfolioCachedData});
+            console.log("Cache Hit for portfolio ID: ");
+            console.log("cachedData: ", portfolioCachedData.data);
+            res.status(200).json(portfolioCachedData);
             return;
         }
         else{
-            console.log("Cache Miss for ID: ", portfolio);
+            console.log("Cache Miss for portfolio ID.");
             console.log("No SQL Fallback for portfolio.");
         }
     }
