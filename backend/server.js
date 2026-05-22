@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import storyRoutes from "./routes/storyRoutes.js";
+import miscRoutes from "./routes/miscRoutes.js"
 import { aj } from "./lib/arcjet.js"
 
 
@@ -69,3 +70,4 @@ app.get("/", (req,res) => {
 });
 
 app.use("/api/stories",storyRoutes);
+app.use("/api/misc",miscRoutes);

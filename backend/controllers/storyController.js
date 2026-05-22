@@ -29,16 +29,14 @@ function sqlConnect(){
         console.log("SQL Connected Successfully.");
         return tempSql;
     }
-    catch(error){
+    catch(error){``
         console.log("SQL Connection Failed: ", error);
     }
 }
 
 // READ
 export const getStoryAll = async (req, res) => {
-    
     const sql = sqlConnect();
-
     try{
         const queryResult = await sql.query(`
             SELECT id, title, date, image, category, short_content 
@@ -54,7 +52,6 @@ export const getStoryAll = async (req, res) => {
 };
 
 export const getStorySingle = async (req, res) => {
-
     try{
         const {id} = req.params;
         const redis = redisConnect();
@@ -110,7 +107,6 @@ export const getAllCategories = async (req, res) => {
 
 // Serving miscellaneous portfolio data
 export const getPortfolio = async (req, res) => {
-
     try{
         const redis = redisConnect();
         const portfolioCachedData = await redis.get(portfolio);
@@ -131,6 +127,7 @@ export const getPortfolio = async (req, res) => {
         res.status(500).json({ status: "Failure", data: "None" });
     }    
 };
+
 
 // // Full CRUD functionality possible, but for security only READ allowed by default.
 
